@@ -4,11 +4,38 @@
 // -- colors ------------------------------------------------------------------
 
 @text: #444;
+@bg: #fff;
 
 // colors from http://dovetail-demo.squarespace.com/
 @blue: #C4E7ED;
 @creme: #F8EFE0;
 @pink: #F0B4B4;
+
+.bg_a {
+	background-color: lighten(@blue, 7%);
+	
+	h1,h2,h3,h4,h5 {
+		color: darken(saturate(@blue, 100%), 65%);
+	}
+}
+
+.bg_b {
+	background-color:  darken(saturate(@creme, 5%), 2%);
+	
+	h1,h2,h3,h4,h5 {
+		color: darken(saturate(@creme, 100%), 65%);
+	}
+}
+
+.bg_c {
+	background-color: lighten(@pink, 7%);
+	
+	h1,h2,h3,h4,h5 {
+		color: darken(saturate(@pink, 100%), 65%);
+	}
+}
+
+
 
 // -- dimensions --------------------------------------------------------------
 
@@ -18,18 +45,106 @@
 
 body, input, textarea, label, td {
 	font-family: 'Raleway', 'Helvetica Neue', sans-serif;
-	font-weight: 200;
+	font-weight: 300;
 	color: @text;
 }
 
-h1 {
+h1,h2,h3,h4,h5 {
 	font-weight: 200;
-	font-size: 2.5em;
+	margin: 0;
+	padding: .3em 0 .2em 0;
+//	border: 1px solid red;
 }
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.6em; }
+h5 { font-size: 1.4em; }
+h6 { font-size: 1.2em; }
 
 // -- layout ------------------------------------------------------------------
 
+body,html {
+	width: 100%;
+	height: 100%;
+}
+
+#teaser {
+	max-width: 100%;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	
+	background: @text url(../img/teaser_ls.jpg) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	
+	box-shadow: inset 0 0 0 10px fade(@bg, 80%);
+
+	h1 {
+		position: absolute;
+		top: 70%; 
+		left: 10px;
+		font-size: 4em;
+		padding: 0;
+		margin: 0;
+	
+		span {
+			padding: .1em .3em .1em 5%;
+			background-color: fade(@bg, 80%);
+		}
+	}
+}
+
+@media screen and (max-width: 500px) and (min-height: 501px) {
+	#teaser {
+		background-image: url(../img/teaser_pt.jpg);
+		box-shadow: none;
+	
+	
+		h1 {
+			left: 0;
+			bottom: 0;
+			top: auto;
+			width: 100%;
+			font-size: 3em;
+			
+		
+			span {
+				display: block;
+				padding: .3em .3em;
+				text-align: center;
+				background-color: fade(@bg, 60%);
+			}
+		}
+	}
+}
+// -- generic layout elements -------------------------------------------------
+
+.icon {
+    background: none no-repeat scroll center center rgba(252, 252, 252, 0.15);
+    border: 1px solid rgba(252, 252, 252, 0.5);
+    border-radius: 34px;
+    display: inline-block;
+    height: 20px;
+    margin: 3.5px 3.5px 3.5px 0;
+    padding: 7px;
+    position: relative;
+    transition: border 0.5s ease 0s, background-color 0.5s ease 0s;
+    vertical-align: middle;
+    white-space: pre-wrap;
+    width: 20px;
+}
+
 .box {
 	padding: 1em;
-	background-color: lighten(@text, 60%);
+    transition: all 0.1s ease;
+}
+
+.box:hover {
+	@scale: 1.02;
+  -webkit-transform: scale(@scale);
+     -moz-transform: scale(@scale);
+  box-shadow: 0 0 1.3em -0.6em lighten(@text, 20%);
 }
