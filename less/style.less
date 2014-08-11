@@ -1,0 +1,30 @@
+@import 'fonts.less';
+@import 'grid.less';
+
+// -- colors ------------------------------------------------------------------
+
+@text: #444;
+
+// -- dimensions --------------------------------------------------------------
+
+@fontsize: 15pt;
+
+// -- typo -------------------------------------------------------------------
+
+body, input, textarea, label, td {
+	font-family: 'Raleway', 'Helvetica Neue', sans-serif;
+	font-weight: 200;
+	color: @text;
+}
+
+h1 {
+	font-weight: 200;
+	font-size: 2.5em;
+}
+
+// -- layout ------------------------------------------------------------------
+
+.box {
+	padding: 1em;
+	background-color: lighten(@text, 60%);
+}

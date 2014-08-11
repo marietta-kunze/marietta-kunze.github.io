@@ -1,0 +1,103 @@
+@hand: 400px;
+@desk: 750px;
+@maxwidth: 50em;
+
+#debug {
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 50000;
+	color: red;
+}
+
+// ---------------------------------------------------------------------- BASIC
+
+.col, .col2, .col3 {
+	padding: 0;
+	margin-top: 1em;
+	
+	clear: none;
+	float: left;
+}
+
+section:after,
+.clr {
+	content: " ";
+	border-color: transparent;
+	clear: both;
+}
+
+section {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	max-width: @maxwidth;
+}
+
+body, html {
+	margin:0;
+	padding:0;
+}
+
+// ----------------------------------------------------------------------- HAND
+
+section {
+	@w: 95%; // single column
+	@m: (100% - @w);
+	
+	.col, .col2, .col3 {
+		width: @w;
+		margin-left: (@m/2);
+		margin-right: (@m/2);
+	}
+}
+
+@media screen and (max-width: @hand) {
+	section{
+		width: 95%;
+	}
+}
+
+@media screen and (min-width: @hand) and (max-width: (@hand/.9)) {
+	section {
+		width: @hand * .95;
+	}
+}
+
+#debug:after {
+	content: "hand"
+}
+
+// -------------------------------------------------------------------- DESKTOP
+@media screen and (min-width: @desk){
+	section {
+		@w: 31%;
+		@m: ((100% - 3*@w)/3);
+		
+		.col, .col2, .col3 {
+			width: @w;
+			margin-left: (@m/2);
+			margin-right: (@m/2);
+		}
+	
+		.col2 {
+			width: 2*@w + @m;
+		}
+	
+		.col3 {
+			width: 3*@w + 2*@m;
+		}
+	
+		.spc1 {
+			margin-left: @w + 3*@m/2;
+		}
+	
+		.spc2 {
+			margin-left: 2*@w + 5*@m/2;
+		}
+	}
+	
+	#debug:after {
+		content: "desktop"
+	}
+}
