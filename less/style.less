@@ -71,12 +71,19 @@ body,html {
 	height: 100%;
 }
 
-#teaser {
+#teaser, #teaserspace, #background {
 	max-width: 100%;
 	width: 100%;
+}
+
+#teaser, #teaserspace {
 	height: 100%;
-	position: relative;
-	
+//	height: 100vh;
+	position: absolute;
+}
+
+#teaser {
+	position: relative;	
 	background: @text url(../img/teaser_ls.jpg) no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -121,6 +128,52 @@ body,html {
 		}
 	}
 }
+
+// if browser supports it, we enable pure CSS parallax effect
+// see http://blog.keithclark.co.uk/pure-css-parallax-websites/
+// the benefit of this technique is that it works on touch devices, WHILE
+// scrolling, not only after scrolling stopped
+html.csstransforms3d.preserve3d {
+
+	// TODO -- on android, a chrome bug allows sideway scrolling
+	// the parallaxwrapper fixes this, but then the browser's toolbar is not 
+	// hidden anymore, when scrolling downwards
+	// currently, I see this of the smaller issue
+	#parallaxwrapper {
+		// required to prevent overflowing-x on android/chrome
+		width: 100%;
+		height: 100vh;
+		overflow-y: auto;
+		overflow-x: hidden;
+		position: fixed;
+	}
+
+	#parallax {
+	
+		perspective: 1px;
+		height: 100vh;
+		overflow-y: auto;
+		overflow-x: hidden;
+	
+		#teaser {
+			position: absolute;
+			transform: translateZ(-1px) scale(2);
+		}
+	
+		#background {
+			position: absolute;
+			margin-top: 100vh;
+			background-color: @bg;
+			width: 100%;
+			min-height: 101vh;
+			float: left;
+			transform: translateZ(0);
+		
+			box-shadow: 0 -10px 10px -7px fade(@text, 50%);;
+		}
+	}
+}
+
 // -- generic layout elements -------------------------------------------------
 
 .icon {

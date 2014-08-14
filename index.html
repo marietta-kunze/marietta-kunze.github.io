@@ -84,7 +84,7 @@
 		</script>
 	</head>
 	
-    <body>
+    <body><div id="parallaxwrapper"><div id="parallax">
 		<!--[if lt IE 9]>
 		  <script>
 		    document.createElement("header" );
@@ -107,39 +107,70 @@
 			<h1 class="col3"><span>Marietta&nbsp;Kunze</span></h1>
 		</section>
 		
-		<section id="about">
-			<article class="col"><div class="box bg_a">
-				<h3>Title</h3>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-			</div></article>
-			
-			<article class="col"><div class="box bg_b">
-				<h3>Title</h3>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-			</div></article>
-			
-			<article class="col"><div class="box bg_c">
-				<h3>Title</h3>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-			</div></article>
-			
-			<article class="col2">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-			</article>
-			
-			<article class="col">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-			</article>
-			
-			<article class="col3">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-			</article>
-			
-		</section>
+		<div id="background">
 		
-		<section id="contact">
+			<section id="about">
+				<article class="col"><div class="box bg_a">
+					<h3>Title</h3>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</div></article>
+				
+				<article class="col"><div class="box bg_b">
+					<h3>Title</h3>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</div></article>
+				
+				<article class="col"><div class="box bg_c">
+					<h3>Title</h3>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</div></article>
+				
+				<article class="col2">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</article>
+				
+				<article class="col">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</article>
+				
+				<article class="col3">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</article>
+				
+			</section>
 			
-		</section>
+			<section id="contact">
+				
+			</section>
+		</div> <!-- end of id="background" -->			
+	</div> <!-- end of id="parallax" -->
+	</div><!-- end of id"=parallaxwrapper" -->
+	
+	<script src="script/modernizr-2.6.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+	// detect preserve3d required for parallax effect
+	(function(Modernizr, win){
+	    Modernizr.addTest('csstransformspreserve3d', function () {
+
+	        var prop = Modernizr.prefixed('transformStyle');
+	        var val = 'preserve-3d';
+	        var computedStyle;
+	        if(!prop) return false;
+
+	        prop = prop.replace(/([A-Z])/g, function(str,m1){ return '-' + m1.toLowerCase(); }).replace(/^ms-/,'-ms-');
+
+	        Modernizr.testStyles('#modernizr{' + prop + ':' + val + ';}', function (el, rule) {
+	            computedStyle = win.getComputedStyle ? getComputedStyle(el, null).getPropertyValue(prop) : '';
+	        });
+
+	        return (computedStyle === val);
+	    });
+	}(Modernizr, window));
+	
+	if (Modernizr.csstransformspreserve3d) {
+		document.getElementsByTagName("html")[0].className += " preserve3d";
+	}
+	</script>
 		
 		<!-- development -------------------------------------------------- -->
 
@@ -172,11 +203,15 @@
 				_.gid("debug").innerHTML = 
 					" win:  " + w.innerWidth + " × " + w.innerHeight + "\n" + 
 				    " doc:  " + e.clientWidth + " × " + e.clientHeight + "\n" + 
-					" body: " + b.clientWidth + " × " + b.clientHeight + "\n ";
+					" body: " + b.clientWidth + " × " + b.clientHeight + "\n " + 
+					"\n" +
+					" mdrnz:" + document.getElementsByTagName("html")[0].className.match(/csstransforms3d/) + "\n";
 				
 			};
 			_.ael("resize", c);
 			c();
+			
+			
 		}
 		</script>
 	</body>
