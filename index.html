@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet/less" type="text/css" href="less/style.less" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		
 		<script>
 		var _ = (function(window){
@@ -119,28 +119,18 @@
 		<div id="background">
 		
 			<section id="about" class="ct">
-				
-<!--				<article class="col3">
-					<h3>Hallo.</h3>
-				</article> -->
 				<article class="col2">
-
 					<blockquote>
 						Die Berliner leben aber frisch drauf los:<br/>
 						Und das ist Gewinn, also haben sie Recht.
 
 						<cite>Rahel Antonie Friederike Varnhagen von Ense</cite>
 					</blockquote>
-
 					<p>
 						Wie wohl die meisten Berliner bin ich zugezogen, habe diese Stadt aber in mein Herz geschlossen. 
 						Ihr buntes Leben, ihre Kultur und Energie ziehen mich in ihren Bann und färben auf mich ab.
 					</p>
-					
-					
-					
 				</article>
-				
 				<article class="col"><p>
 					<img src="img/berlin.jpg" alt="Guten Morgen Berlin" title="Guten Morgen Berlin" />
 				</p></article>
@@ -193,16 +183,6 @@
 				</div></article>
 				
 				<hr class="clr" />
-								
-				
-				<!--article class="col3">
-					constructive, organized, practical results
-					observant and calm, help others stay on track
-					gute Menschenkenntnis
-					structured, dependable, efficient, innovative
-					stay engaged, motivated
-				</article-->
-				
 			</section>
 			
 			<section id="connect" class="ct">
@@ -324,48 +304,5 @@
 		document.getElementsByTagName("html")[0].className += " preserve3d";
 	}
 	</script>
-		
-		<!-- development -------------------------------------------------- -->
-
-		<script>
-		  less = {
-		    env: "development",
-			logLevel: 1
-		  };
-		</script>
-		<script src="script/less.js"></script>
-		
-		<script>
-		if (document.location.search.match(/watch/)) {
-				console.log("less watches" + (less.watch() ? "" : "not"));
-		}
-		
-		if (document.location.search.match(/debug/)) {
-			// show viewport dimensions
-			
-			var w=window,
-			    d=document,
-			    e=d.documentElement,
-			    b=d.getElementsByTagName('body')[0];
-			
-			var p = document.createElement("pre");
-			    p.id="debug";
-				document.body.appendChild(p);
-				
-			var c = function(){
-				_.gid("debug").innerHTML = 
-					" win:  " + w.innerWidth + " × " + w.innerHeight + "\n" + 
-				    " doc:  " + e.clientWidth + " × " + e.clientHeight + "\n" + 
-					" body: " + b.clientWidth + " × " + b.clientHeight + "\n " + 
-					"\n" +
-					" mdrnz:" + document.getElementsByTagName("html")[0].className.match(/preserve3d/) + "\n";
-				
-			};
-			_.ael("resize", c);
-			c();
-			
-			
-		}
-		</script>
 	</body>
 </html>
