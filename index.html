@@ -104,51 +104,196 @@
 		<![endif]-->
 
 		<section id="teaser">
-			<h1 class="col3"><span>Marietta&nbsp;Kunze</span></h1>
+			<h1 class="col3" id="teasertitle"><span>Marietta&nbsp;Kunze</span></h1>
 		</section>
+		
+		<script>
+
+		_.ael("load", function(){
+			var w = 0.4, min = 50, max = 100;
+			_.fit("teasertitle", {w: w, min: min, max:max, f:.8});
+		});
+		
+		</script>
 		
 		<div id="background">
 		
-			<section id="about">
+			<section id="about" class="ct">
+				
+<!--				<article class="col3">
+					<h3>Hallo.</h3>
+				</article> -->
+				<article class="col2">
+
+					<blockquote>
+						Die Berliner leben aber frisch drauf los:<br/>
+						Und das ist Gewinn, also haben sie Recht.
+
+						<cite>Rahel Antonie Friederike Varnhagen von Ense</cite>
+					</blockquote>
+
+					<p>
+						Wie wohl die meisten Berliner bin ich zugezogen, habe diese Stadt aber in mein Herz geschlossen. 
+						Ihr buntes Leben, ihre Kultur und Energie ziehen mich in ihren Bann und färben auf mich ab.
+					</p>
+					
+					
+					
+				</article>
+				
+				<article class="col"><p>
+					<img src="img/berlin.jpg" alt="Guten Morgen Berlin" title="Guten Morgen Berlin" />
+				</p></article>
+			</section>
+			
+			<section id="profile" class="ct">	
 				<article class="col3">
+					<h3>Über mich.</h3>
+					
+					<p>
+						In Berlin habe ich nicht nur eine neue Heimat gefunden. Ich habe eine Familie gegründet; bin verheiratet und habe eine Tochter.
+						Mit meinem Kind und meinem Mann erwarten mich jeden Tag spannende, neue Abenteuer.
+					</p>
+				</article>
+				
+				<article class="col"><div class="box bg_b">
+					<h3>Persönlich</h3>
+					<p>
+						Mit vielseitigen Aktivitäten im Freien halte ich mich in Schwung. 
+						Um es ruhiger angehen zu lassen, besuche ich die Oper oder das Theater oder lasse mich von Kunst&shy;ausstellungen inspirieren.
+					</p>
+					<p>
+						Nicht nur beruflich verfolge ich begeistert Trends und Innovationen der Mode und bin regelmäßiger Besucher bei der <em>Bread & Butter Berlin</em> und der <em>Berlin Fashion Week</em>.
+					</p>
+				</div></article>
+				
+				<article class="col"><div class="box bg_a">
+					<h3>Beruf</h3>
+					<p>
+						Seit fünf Jahren bin ich Shop-Assistant im Flagship-Store der <em>FREITAG lab.&nbsp;ag</em> und kümmere mich um Logistik und Direct Sales.
+					</p>
+					<p>
+						Dort verkaufe ich nicht nur Taschen und Accessoires, sondern Lifestyle, der – im wörtlichen Sinne – bereits ganz Europa bereist hat. 
+						Denn jede FREITAG-Tasche ist individuell und wird aus recycelter LKW-Plane hergestellt.
+					</p>
+				</div></article>
+				
+				<article class="col"><div class="box bg_c">
+					<h3>Ausbildung</h3>
+					<p>
+						Ich bin gelernte <em>Veranstaltungs&shy;kauffrau</em> mit Schwerpunkt in der Entwicklung von Veranstaltungs- und Marketing&shy;konzepten.
+					</p><p>
+						2011 habe ich meine Kompetenzen im Bereich <br/>
+							<em>Personalentwicklung</em>, <br/>
+							<em>Organisation</em> und <br/> 
+							<em>Kommunikation</em><br/>
+						durch eine Weiterbildung im Fernstudium erweitert.<br/>
+						&nbsp;
+					</p>
+				</div></article>
+				
+				<hr class="clr" />
+								
+				
+				<!--article class="col3">
 					constructive, organized, practical results
 					observant and calm, help others stay on track
 					gute Menschenkenntnis
 					structured, dependable, efficient, innovative
 					stay engaged, motivated
-				</articl>
-				
-				<article class="col"><div class="box bg_a">
-					<h3>Title</h3>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				</div></article>
-				
-				<article class="col"><div class="box bg_b">
-					<h3>Title</h3>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				</div></article>
-				
-				<article class="col"><div class="box bg_c">
-					<h3>Title</h3>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				</div></article>
-				
-				<article class="col2">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				</article>
-				
-				<article class="col">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				</article>
-				
-				<article class="col3">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, set eiusmod tempor incidunt et labore et dolore magna aliquam. Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				</article>
+				</article-->
 				
 			</section>
 			
-			<section id="contact">
+			<section id="connect" class="ct">
+				<article class="col3">
+					<h3>Kontakt.</h3>
+					<p>
+						Sie wollen mich näher kennen lernen? Oder einfach nur einmal "hallo" sagen? Kein Problem. 
+						Schreiben Sie mir einfach eine Nachricht. Hinterlassen Sie Ihren Namen und Ihre Email-Adresse
+						und ich melde mich gern bei Ihnen.
+				</article>
 				
+				<article class="col2">
+					<form id="contact" action="" method="POST">
+						<!-- from google forms -->
+						<input type="hidden" name="draftResponse" value="[,,&quot;2825845930602800452&quot;]">
+						<input type="hidden" name="fbzx" value="2825845930602800452">
+						<input type="hidden" name="pageHistory" value="0">
+						<input type="hidden" name="fromEmail" value="false">
+						<!-- from google forms -->
+
+						<div class="name">
+							<input id="name" name="entry.418961107" type="text" value="" required disabled="disabled" />
+							<label for="name">Name</label>
+						</div>
+						<div class="mail">
+							<input id="mail" name="entry.1686305661" type="text" value="" required disabled/>
+							<label for="mail">Email-Adresse</label>
+						</div>
+						<div>
+							<textarea id="msg" name="entry.1247928453" required disabled></textarea>
+							<label for="msg">Nachricht</label>
+						</div>
+						<div class="submit">
+							<input id="submit" type="submit" class="email" value="Absenden" disabled/>
+						</div>
+						<script>
+
+						var elements = Array.prototype.filter
+							.call(_.gid("contact").elements, function(e) {
+								return e.type == "text" || e.type == "textarea";
+							});
+	
+						elements.forEach(function(e){
+							e.value = "";
+							e.disabled = false;
+
+							function update() {
+		
+								// state of current field
+								if (e.value.length > 0) {
+									if (!e.className.match(/ok/)) {
+										e.className = e.className + " ok";
+									}
+								} else {
+									if (e.className.match(/ok/)) {
+										e.className = e.className.replace (/ok/g,"");
+									}
+								}
+		
+								// state of all
+								if (elements.every(function(e){
+									return e.className.match(/ok/);
+								})) {				
+									_.gid("submit").disabled = false;
+									_.gid("contact").action = _.decode("117|129|129|125|128|71|60|60|113|124|112|128|59|116|124|124|116|121|114|59|112|124|122|60|115|124|127|122|128|60|113|60|62|129|93|130|94|132|112|95|120|128|131|131|85|112|133|120|130|95|122|121|110|125|80|68|111|131|89|97|87|80|89|98|78|83|103|95|82|58|132|112|127|114|111|102|60|115|124|127|122|95|114|128|125|124|123|128|114");
+								}
+								else {
+									_.gid("submit").disabled = true;
+									_.gid("contact").action = "";
+								}
+							}
+	
+							e.onkeyup = update;
+							e.onblur = update;
+						});
+						</script>
+
+					</form>
+				</article>
+			
+				<article class="col">
+					<div style="text-align: center">
+						<a class="icon xing" href="https://www.xing.com/profile/Marietta_Gutsche" target="blank"></a>
+					</div>
+					<p>
+					Wenn Sie mehr über meinen beruflichen Werdegang wissen möchten, dann lernen Sie mich auf <a href="https://www.xing.com/profile/Marietta_Gutsche" target="blank">XING</a> kennen.
+					</p>
+				</article>
+				
+				
+				<hr class="clr" />
 			</section>
 		</div> <!-- end of id="background" -->			
 	</div> <!-- end of id="parallax" -->

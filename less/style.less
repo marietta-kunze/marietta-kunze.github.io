@@ -1,53 +1,67 @@
 @import 'fonts.less';
 @import 'grid.less';
 
+
 // -- colors ------------------------------------------------------------------
 
 @text: #444;
 @bg: #fff;
 
 // colors from http://dovetail-demo.squarespace.com/
-@blue: #C4E7ED;
-@creme: #F8EFE0;
-@pink: #F0B4B4;
+@blue:          lighten(#C4E7ED, 7%);
+@creme: darken(saturate(#F8EFE0, 5%), 2%);
+@pink:          lighten(#F0B4B4, 7%);
+
+@darkblue: darken(saturate(@blue, 100%), 65%);
+@darkcreme: darken(saturate(@creme, 100%), 65%);
+@darkred: darken(saturate(@pink, 100%), 65%);
 
 .bg_a {
-	background-color: lighten(@blue, 7%);
+	background-color: @blue;;
 	
 	h1,h2,h3,h4,h5 {
-		color: darken(saturate(@blue, 100%), 65%);
+		color: @darkblue;
 //		text-shadow: 0 0 1px darken(saturate(@blue, 100%), 85%)
 	}
 }
 
 .bg_b {
-	background-color:  darken(saturate(@creme, 5%), 2%);
+	background-color: @creme;
 	
 	h1,h2,h3,h4,h5 {
-		color: darken(saturate(@creme, 100%), 65%);
+		color: @darkcreme;
 	}
 }
 
 .bg_c {
-	background-color: lighten(@pink, 7%);
+	background-color: @pink;
 	
 	h1,h2,h3,h4,h5 {
-		color: darken(saturate(@pink, 100%), 65%);
+		color: @darkred;
 	}
 }
 
+a, a.link, a.visited, a.active {
+	color: @darkblue;
+	text-decoration: none;
+}
 
+a:hover {
+	text-decoration: underline;
+}
 
 // -- dimensions --------------------------------------------------------------
 
-@fontsize: 15pt;
+@fontsize: 16px;
 
 // -- typo -------------------------------------------------------------------
 
 body, input, textarea, label, td {
 	font-family: 'Raleway', 'Helvetica Neue', sans-serif;
 	font-weight: 300;
+	line-height: 160%;
 	color: @text;
+	font-size: @fontsize;
 }
 
 h1,h2,h3,h4,h5 {
@@ -64,6 +78,25 @@ h4 { font-size: 1.6em; }
 h5 { font-size: 1.4em; }
 h6 { font-size: 1.2em; }
 
+blockquote {
+	font-family: 'Lobster Two', arial, cursive;
+	font-style: italic;
+	margin-left: 0em;
+	margin-right: 01em;
+	font-size: 1.4em;
+	line-height: 150%;
+	
+	cite {
+		display: block;
+		text-align: right;
+		font-family: 'Raleway', 'Helvetica Neue', sans-serif;
+		font-size: .7em;
+	}
+	cite:before {
+		content: "— ";
+	}
+}
+
 // -- layout ------------------------------------------------------------------
 
 body,html {
@@ -74,6 +107,10 @@ body,html {
 #teaser, #teaserspace, #background {
 	max-width: 100%;
 	width: 100%;
+}
+
+#background {
+	padding-bottom: 3em;
 }
 
 #teaser, #teaserspace {
@@ -121,9 +158,8 @@ body,html {
 		
 			span {
 				display: block;
-				padding: .3em .3em;
+				padding: .6em .3em;
 				text-align: center;
-				background-color: fade(@bg, 60%);
 			}
 		}
 	}
@@ -175,31 +211,142 @@ html.csstransforms3d.preserve3d {
 	}
 }
 
-// -- generic layout elements -------------------------------------------------
+// -- contact form ------------------------------------------------------------
 
-.icon {
-    background: none no-repeat scroll center center rgba(252, 252, 252, 0.15);
-    border: 1px solid rgba(252, 252, 252, 0.5);
-    border-radius: 34px;
-    display: inline-block;
-    height: 20px;
-    margin: 3.5px 3.5px 3.5px 0;
-    padding: 7px;
-    position: relative;
-    transition: border 0.5s ease 0s, background-color 0.5s ease 0s;
-    vertical-align: middle;
-    white-space: pre-wrap;
-    width: 20px;
+form {
+	border-right: 1px solid fade(@text, 30%);
+	
+	> div {
+		position: relative;
+		display: block;
+		width: 95%;
+		margin-bottom: 1.8em;
+		
+	}
+	
+	input {
+			border-radius: 2px;
+	}
+	
+	input[type=text], textarea {
+		width: 100%;
+		border-width: 0;
+		box-shadow: none; // overwrites FF's invalid/required highlighting
+		background-color: @creme;
+		border-left: 1px solid @darkcreme;
+		padding: .2em .4em;
+	}
+	
+	input:focus, textarea:focus {
+		box-shadow: none; // overwrites Ch's focus highlighting
+	}
+	
+	textarea {
+		min-height: 7em;
+	}
+	
+	label {
+		position: absolute;
+		left: .4em;
+		bottom: 0;
+		padding-bottom: .2em;
+		cursor: text;
+		transition: bottom .2s ease, 
+					color .2s ease,
+					font-size .2s ease;
+	}
+	
+	// input[required] + label:after,
+	// textarea[required] + label:after {
+	// 	vertical-align: top;
+	// 	content: " *"
+	// }
+	
+	input.ok + label,
+	textarea.ok + label {
+		color: @darkblue;
+	}
+	
+	input.ok + label:after,
+	textarea.ok + label:after {
+		content: " ✓";
+	}
+
+	input:focus + label,
+	input.ok + label,
+	textarea:focus + label,
+	textarea.ok  + label{
+		bottom: -1.6em;
+		font-size: .8em;
+		font-weight: 400;
+		box-shadow: none;
+	}
+	
+	.submit input {
+		background-repeat: no-repeat;
+		background-position: .3em center;
+		padding: .3em .3em .3em 35px;
+		
+		border: 1px solid @darkblue;
+		background-color: @blue;
+		color: @text;
+		cursor: pointer;
+	}
+	
+	.submit {
+		text-align: right;
+	}
+	
+	.submit input:hover {
+		background-color: darken(@blue, 7%);
+	}
+	
+	.submit input[disabled] {
+		border-color: lighten(@text, 20%);
+		background-color: lighten(@text, 50%);
+		color: lighten(@text, 20%);
+		cursor: not-allowed;
+	}
 }
+
+// -- generic layout elements -------------------------------------------------
 
 .box {
 	padding: 1em;
+	margin-top: 1em;
+	margin-bottom: 2em;
     transition: all 0.1s ease;
 }
 
-.box:hover {
+.box:hover,
+.col img:hover {
 	@scale: 1.02;
   -webkit-transform: scale(@scale);
      -moz-transform: scale(@scale);
-  box-shadow: 0 0 1.3em -0.6em lighten(@text, 20%);
+  box-shadow: 0 0 .8em -0.3em lighten(@text, 0%);
 }
+
+img {
+	max-width: 94%;
+	padding: 3%;
+//	border: 1px solid fade(@text, 50%);
+	box-shadow: 0 0 .8em -0.3em lighten(@text, 0%);
+}
+
+section.ct:first-child {
+	margin-top: 3em;
+}
+
+section.ct:after {
+	content: " ";
+	float: left;
+	width: 80%;
+	display:block;
+	border-top: 1px solid fade(@text, 30%);
+	margin: 4em 10% 3em;
+}
+section.ct:last-child:after {
+	display: none;
+}
+
+@import 'icons.less';
